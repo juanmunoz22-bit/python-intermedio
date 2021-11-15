@@ -6,9 +6,15 @@ def divisors(num):
     return divisors
 
 def run():
-    num = int(input("Enter a number: "))
-    print(divisors(num))
-    print('End of file')
+    try:
+        num = int(input("Enter a number: "))
+        if num < 1:
+            raise ValueError("Invalid input. Must be a positive integer")
+        print(divisors(num))
+        print('End of file')
+    except ValueError:
+        print('Invalid input. Must be a number')
+
 
 if __name__ == '__main__':
     run()
